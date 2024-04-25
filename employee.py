@@ -39,7 +39,7 @@ def predict_employee_leaving(satisfaction_level, average_monthly_hours, promotio
     return predicted_probability, y_test_hat
 
 def main():
-    st.title("Employee Attrition Prediction Model")
+    st.title("Employee Departure Prediction Model")
     
     
     # Custom CSS to inject into the HTML
@@ -63,7 +63,7 @@ def main():
     # Convert promotion_last_5years to 0 or 1
     promotion_last_5years = 1 if promotion_last_5years == "Yes" else 0
 
-    if st.button("Predict Employee Departure"):
+    if st.button("Predict Departure"):
         probability, prediction = predict_employee_leaving(satisfaction_level, average_monthly_hours, promotion_last_5years, salary)
         st.subheader("Prediction Results")
         st.write("Probability of leaving: {:.2%}".format(probability))
